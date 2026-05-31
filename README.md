@@ -37,6 +37,96 @@ dlc/             DLC packs (bin files + manifest + generation tool)
 manifest.json    PWA manifest
 ```
 
+## UI Design
+
+### Styling Architecture
+
+All styles in `style.css` (~900 lines), organized into 15 sections:
+
+1. **Base Reset & Typography** — CSS reset, system font stack
+2. **Theme Variables** — 50+ CSS custom properties for dark/light themes
+3. **Page Layout** — `.page` (flex centering), `.page-width` (responsive max-width)
+4. **Header & Game Info** — title, ghost buttons, action buttons
+5. **Buttons & Controls** — `.btn`, `.action-btn`, `.btn-ghost`
+6. **Game Board & Vehicles** — board grid, vehicle blocks, exit label
+7. **Modals (shared)** — overlay, content, title, close button
+8–11. **Modal variants** — win, random/delete, pack select, level select
+12. **Animations** — `@keyframes` for win slide-out and modal fade-in
+13. **Easter Egg** — hidden switch text (color-matching invisibility)
+14. **Responsive Breakpoints** — 640/768/1024px
+15. **Hover Styles** — `@media (hover: hover)` for non-touch devices
+
+### Main Interface Layout
+
+```
+┌─────────────────────────────┐
+│         Block2Lock          │  ← game-title
+│                             │
+│ Classic:001  Moves:5 Best:3 │  ← 3 ghost buttons (btn-ghost)
+│                             │
+│    ◀  Classic:001  Random ▶ │  ← 4 action buttons
+│                             │
+│  ┌───────────────────────┐  │
+│  │        ♥              │  │  ← favorite-btn (absolute)
+│  │  ┌──┬──┬──┬──┬──┬──┐  │  │
+│  │  │  │  │  │  │  │  │  │  │  ← 6×6 board
+│  │  ├──┼──┼──┼──┼──┼──┤  │  │
+│  │  │  │  │  │  │  │  │  │  │
+│  │  └──┴──┴──┴──┴──┴──┘  │  │
+│  └───────────────────────┘  │
+│                             │
+│          [ Undo ]           │  ← btn-undo
+└─────────────────────────────┘
+```
+
+**Ghost buttons** (`.btn-ghost`): transparent, no border/background, look like plain text. Used for Moves, Best, and level display. Disabled state is visually identical to enabled (cursor changes only).
+
+**Action buttons** (`.action-btn`): styled with `--bg-button` background, subtle border and shadow in dark mode. Used for ◀, ▶, Random, and level display marquee.
+
+### Level Display Marquee
+
+The level display button uses a CSS breathing animation to crossfade between pack name and level number. A single `@keyframes breathe` with `animation-delay: -2.5s` offsets the two texts by half the 5-second cycle. Pauses on game win via `animationPlayState`.
+
+### Favorite Button
+
+Floating ♥ at the top-right corner of the game container (`position: absolute`, `z-index: 20`). Two states:
+- Not favorited: `var(--text-secondary)` (muted gray)
+- Favorited: `var(--color-player)` (theme accent red)
+
+### Modal Hierarchy
+
+| Modal | z-index | Screen padding | Purpose |
+|-------|---------|----------------|---------|
+| Win | 50 | — | Game completion |
+| Pack select | 50 | 0.5rem | Choose DLC pack |
+| Level select | 50 | 0.5rem | Choose level within pack |
+| Random | 60 | 0.75rem | Random level picker |
+| Delete | 60 | 0.75rem | Confirm pack deletion |
+
+Higher z-index modals have more screen padding, expressing visual hierarchy.
+
+### Theme System
+
+50+ CSS custom properties on `body`, overridden on `body.light`:
+
+| Category | Variables |
+|----------|-----------|
+| Core | `--bg-main`, `--text-primary`, `--text-secondary` |
+| Container | `--bg-container`, `--border-container`, `--bg-board` |
+| Buttons | `--bg-button`, `--bg-button-hover`, `--text-button`, `--border-button`, `--shadow-button` |
+| Modals | `--bg-modal`, `--border-modal`, `--text-win`, `--bg-win-button` |
+| Level grid | `--bg-level-item`, `--bg-level-item-hover`, `--text-level-item` |
+| Vehicles | `--color-player`, `--color-block-a` through `--color-block-k` |
+
+Toggle: `body.classList.toggle('light')`, persisted in `localStorage`.
+
+### Animations
+
+- **Win**: player block slides out (`translateX(500%)`) over 0.4s, then win modal fades in
+- **Modal**: `scale(0.9)` → `scale(1)` with opacity fade, 0.3s
+- **Marquee**: pack name ↔ level number breathing crossfade (5s cycle, CSS-only)
+- **Theme**: background-color and color transition over 0.3s
+
 ## Level Data Format
 
 Each level is a 36-character string (6×6 grid, row-major):
@@ -103,7 +193,8 @@ Level display uses base-62 encoding (0-9, a-z, A-Z), 3 digits for up to 238,327 
 **Key decisions:**
 - No build tools — native ES modules, zero configuration
 - No framework — vanilla JS, ~60 KB total (excluding DLC)
-- External CSS — `style.css` with CSS variables for theming
+- Semantic CSS — no utility framework, component-based class names
+- CSS custom properties — 50+ variables for dark/light theming
 - Binary level format — 36 bytes/level, instant random access
 - On-demand slicing — Uint8Array in memory, convert on access
 - IndexedDB — supports large datasets (hundreds of MB)

@@ -31,7 +31,6 @@ function formatLevel(idx) {
 export function cacheElements() {
   els = {
     board: document.getElementById('board'),
-    gameContainer: document.getElementById('game-container'),
     packDisplay: document.getElementById('pack-display'),
     levelDisplay: document.getElementById('level-display'),
     movesDisplay: document.getElementById('moves-display'),
@@ -427,6 +426,13 @@ export function showHiddenSwitchText() {
 
 export function hideHiddenSwitchText() {
   if (els.hiddenSwitchText) els.hiddenSwitchText.classList.remove('visible');
+}
+
+// --- Level marquee (CSS animation, pause on win) ---
+
+export function stopLevelMarquee() {
+  if (els.packDisplay) els.packDisplay.style.animationPlayState = 'paused';
+  if (els.levelDisplay) els.levelDisplay.style.animationPlayState = 'paused';
 }
 
 // --- Favorite button ---

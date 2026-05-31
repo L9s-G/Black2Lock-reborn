@@ -44,8 +44,6 @@ button {
     font-weight: inherit;
     line-height: inherit;
     color: inherit;
-    margin: 0;
-    padding: 0;
     text-transform: none;
     background-color: transparent;
     background-image: none;
@@ -84,7 +82,7 @@ body {
     --text-button-disabled: #64748b;
 
     --bg-modal: #3D3D3D;
-    --border-modal: #2C2C2C;
+    --border-modal: 1px solid #2C2C2C;
     --text-win: #10B981;
     --text-best-score: #FBBF24;
     --text-best-score-highlight: #FBBF24;
@@ -99,7 +97,6 @@ body {
     --text-level-locked: #64748b;
     --text-best-score-badge: #FBBF24;
     --stroke-best-score-badge: 1px rgba(0, 0, 0, 0.3);
-    --shadow-best-score-badge: none;
 
     --shadow-vehicle: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.2);
     --shadow-player: 0 0 12px 2px rgba(244, 63, 94, 0.5), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -159,7 +156,6 @@ body.light {
     --text-level-locked: #9CA3AF;
     --text-best-score-badge: #F97316;
     --stroke-best-score-badge: 0;
-    --shadow-best-score-badge: none;
 
     --shadow-vehicle: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-player: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
@@ -202,11 +198,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.25rem;
 }
 
 .page-width {
-    width: 90%;
+    width: 100%;
     max-width: 32rem;
 }
 
@@ -216,7 +212,7 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin: 1rem 0.25rem 0;
 }
 
 .game-title {
@@ -224,6 +220,7 @@ body {
     line-height: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
 }
 
 .theme-toggle {
@@ -235,16 +232,13 @@ body {
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
+    margin-top: 0;
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-}
-
-.game-info + .game-info {
-    margin-top: 1rem;
 }
 
 .win-best-info.new-best {
@@ -290,8 +284,8 @@ body {
 
 .btn.btn-ghost {
     cursor: pointer;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     color: var(--text-secondary);
     background: none;
     border: none;
@@ -363,22 +357,9 @@ body {
     color: var(--text-button-disabled);
     opacity: 1;
     box-shadow: none;
-    border-color: var(--button-disabled-border, transparent);
+    border-color: transparent;
     transform: translateY(0);
     cursor: default;
-}
-
-.btn-primary {
-    background-color: var(--bg-win-button);
-    color: var(--text-win-button);
-}
-
-.btn-primary:hover {
-    background-color: var(--bg-win-button-hover);
-}
-
-.btn-primary:focus {
-    box-shadow: 0 0 0 2px var(--bg-main), 0 0 0 4px #4ade80;
 }
 
 .action-btn {
@@ -391,6 +372,39 @@ body {
     font-weight: 500;
     border: var(--border-button);
     box-shadow: var(--shadow-button);
+}
+
+.level-marquee {
+    position: relative;
+    min-width: 5rem;
+    overflow: hidden;
+}
+
+.level-marquee-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+#pack-display {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#pack-display {
+    animation: breathe 5s ease-in-out infinite;
+}
+
+#level-display {
+    animation: breathe 5s ease-in-out infinite -2.5s;
+}
+
+@keyframes breathe {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .action-btn:focus {
@@ -584,6 +598,7 @@ body {
 .random-modal,
 .delete-modal {
     z-index: 60;
+    padding: 0.75rem;
 }
 
 .random-content,
@@ -621,11 +636,11 @@ body {
 
 .pack-modal {
     z-index: 50;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .pack-content {
-    padding: 1.5rem;
+    padding: 1rem;
     width: 100%;
     max-width: 28rem;
     position: relative;
@@ -642,8 +657,7 @@ body {
     flex-direction: column;
     gap: 0.75rem;
     max-height: 60vh;
-    overflow-y: auto;
-    padding-right: 0.25rem;
+    overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -686,11 +700,11 @@ body {
 
 .level-modal {
     z-index: 50;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .level-content {
-    padding: 1.5rem;
+    padding: 1rem;
     width: 100%;
     max-width: 28rem;
     position: relative;
@@ -707,7 +721,7 @@ body {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 0.75rem;
     max-height: 60vh;
-    overflow-y: auto;
+    overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -721,8 +735,9 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.75rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+}
+
+.level-actions .action-btn {
     color: var(--text-button);
 }
 
@@ -748,19 +763,6 @@ body {
     height: 0.25rem;
 }
 
-.level-button-locked {
-    background-color: var(--bg-level-locked) !important;
-    color: var(--text-level-locked) !important;
-}
-
-.level-button-locked svg {
-    opacity: 0.7;
-}
-
-.level-button-locked span {
-    display: none;
-}
-
 .best-score-display {
     position: absolute;
     bottom: 2px;
@@ -770,7 +772,6 @@ body {
     font-weight: bold;
     color: var(--text-best-score-badge);
     -webkit-text-stroke: var(--stroke-best-score-badge);
-    text-shadow: var(--shadow-best-score-badge);
 }
 
 .fav-star {
@@ -818,7 +819,7 @@ body {
     font-size: 0.6rem;
     line-height: 1.2;
     border-radius: 4px;
-    margin-top: 8px;
+    margin: 8px auto 0;
     white-space: pre-wrap;
     max-width: 80vw;
     font-family: monospace;
@@ -842,10 +843,6 @@ body {
    ================================ */
 
 @media (min-width: 640px) {
-    .page-width {
-        width: 100%;
-    }
-
     .level-grid {
         grid-template-columns: repeat(6, minmax(0, 1fr));
     }
@@ -909,7 +906,7 @@ body {
         background-color: var(--bg-level-item-hover);
     }
 
-    .level-btn:not(.level-button-locked):hover {
+    .level-btn:hover {
         background-color: var(--bg-level-item-hover);
     }
 

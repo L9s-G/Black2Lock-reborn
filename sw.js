@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Block2Lock-v2.5.31';
+const CACHE_NAME = 'Block2Lock-v2.5.4';
 const ASSETS = [
     './',
     './index.html',

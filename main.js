@@ -86,6 +86,7 @@ async function handleMoveEnd(vehicleIndex, cellsMoved) {
 
 async function handleWin(result) {
   Render.disableAllControls();
+  Render.stopLevelMarquee();
 
   const playerEl = document.getElementById('vehicle-0');
   if (playerEl) playerEl.classList.add('animate-win');
