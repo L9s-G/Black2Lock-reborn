@@ -1,0 +1,170 @@
+[
+  {
+    "id": "dlc_10",
+    "name": "DLC 10",
+    "moves": 10,
+    "count": 58327,
+    "size": 2099772,
+    "file": "dlc_10.bin"
+  },
+  {
+    "id": "dlc_11",
+    "name": "DLC 11",
+    "moves": 11,
+    "count": 60865,
+    "size": 2191140,
+    "file": "dlc_11.bin"
+  },
+  {
+    "id": "dlc_12",
+    "name": "DLC 12",
+    "moves": 12,
+    "count": 52401,
+    "size": 1886436,
+    "file": "dlc_12.bin"
+  },
+  {
+    "id": "dlc_13",
+    "name": "DLC 13",
+    "moves": 13,
+    "count": 41222,
+    "size": 1483992,
+    "file": "dlc_13.bin"
+  },
+  {
+    "id": "dlc_14",
+    "name": "DLC 14",
+    "moves": 14,
+    "count": 31030,
+    "size": 1117080,
+    "file": "dlc_14.bin"
+  },
+  {
+    "id": "dlc_15",
+    "name": "DLC 15",
+    "moves": 15,
+    "count": 24136,
+    "size": 868896,
+    "file": "dlc_15.bin"
+  },
+  {
+    "id": "dlc_16",
+    "name": "DLC 16",
+    "moves": 16,
+    "count": 19017,
+    "size": 684612,
+    "file": "dlc_16.bin"
+  },
+  {
+    "id": "dlc_17",
+    "name": "DLC 17",
+    "moves": 17,
+    "count": 14602,
+    "size": 525672,
+    "file": "dlc_17.bin"
+  },
+  {
+    "id": "dlc_18",
+    "name": "DLC 18",
+    "moves": 18,
+    "count": 11578,
+    "size": 416808,
+    "file": "dlc_18.bin"
+  },
+  {
+    "id": "dlc_19",
+    "name": "DLC 19",
+    "moves": 19,
+    "count": 9049,
+    "size": 325764,
+    "file": "dlc_19.bin"
+  },
+  {
+    "id": "dlc_20",
+    "name": "DLC 20",
+    "moves": 20,
+    "count": 7111,
+    "size": 255996,
+    "file": "dlc_20.bin"
+  },
+  {
+    "id": "dlc_21",
+    "name": "DLC 21",
+    "moves": 21,
+    "count": 5572,
+    "size": 200592,
+    "file": "dlc_21.bin"
+  },
+  {
+    "id": "dlc_22",
+    "name": "DLC 22",
+    "moves": 22,
+    "count": 4192,
+    "size": 150912,
+    "file": "dlc_22.bin"
+  },
+  {
+    "id": "dlc_23",
+    "name": "DLC 23",
+    "moves": 23,
+    "count": 3263,
+    "size": 117468,
+    "file": "dlc_23.bin"
+  },
+  {
+    "id": "dlc_24",
+    "name": "DLC 24",
+    "moves": 24,
+    "count": 2351,
+    "size": 84636,
+    "file": "dlc_24.bin"
+  },
+  {
+    "id": "dlc_25",
+    "name": "DLC 25",
+    "moves": 25,
+    "count": 1787,
+    "size": 64332,
+    "file": "dlc_25.bin"
+  },
+  {
+    "id": "dlc_26",
+    "name": "DLC 26",
+    "moves": 26,
+    "count": 1319,
+    "size": 47484,
+    "file": "dlc_26.bin"
+  },
+  {
+    "id": "dlc_27",
+    "name": "DLC 27",
+    "moves": 27,
+    "count": 994,
+    "size": 35784,
+    "file": "dlc_27.bin"
+  },
+  {
+    "id": "dlc_28",
+    "name": "DLC 28",
+    "moves": 28,
+    "count": 746,
+    "size": 26856,
+    "file": "dlc_28.bin"
+  },
+  {
+    "id": "dlc_29",
+    "name": "DLC 29",
+    "moves": 29,
+    "count": 586,
+    "size": 21096,
+    "file": "dlc_29.bin"
+  },
+  {
+    "id": "dlc_30plus",
+    "name": "DLC 30+",
+    "moves": "30+",
+    "count": 1724,
+    "size": 62064,
+    "file": "dlc_30plus.bin"
+  }
+]
