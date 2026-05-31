@@ -55,127 +55,7 @@ button:focus {
     outline: 5px auto -webkit-focus-ring-color;
 }
 
-/* ================================
-   2. Theme Variables
-   ================================ */
-
-/* --- Dark Theme (Default) --- */
-body {
-    --bg-main: #1F1F1F;
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
-
-    --bg-container: #3D3D3D;
-    --border-container: #2C2C2C;
-    --bg-board: #2C2C2C;
-    --bg-grid-lines: rgba(255, 255, 255, 0.05);
-    --shadow-board: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-
-    --bg-button: #3D3D3D;
-    --bg-button-hover: #4f4f4f;
-    --text-button: var(--text-primary);
-    --border-button: 1px solid rgba(255, 255, 255, 0.08);
-    --shadow-button: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-button-hover-offset: 0;
-    --shadow-button-active-offset: 0;
-    --bg-button-disabled: rgba(61, 61, 61, 0.5);
-    --text-button-disabled: #64748b;
-
-    --bg-modal: #3D3D3D;
-    --border-modal: 1px solid #2C2C2C;
-    --text-win: #10B981;
-    --text-best-score: #FBBF24;
-    --text-best-score-highlight: #FBBF24;
-    --bg-win-button: #F43F5E;
-    --bg-win-button-hover: #FB7185;
-    --text-win-button: #fff;
-
-    --bg-level-item: #454545;
-    --bg-level-item-hover: #4f4f4f;
-    --text-level-item: var(--text-primary);
-    --bg-level-locked: rgba(61, 61, 61, 0.5);
-    --text-level-locked: #64748b;
-    --text-best-score-badge: #FBBF24;
-    --stroke-best-score-badge: 1px rgba(0, 0, 0, 0.3);
-
-    --shadow-vehicle: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.2);
-    --shadow-player: 0 0 12px 2px rgba(244, 63, 94, 0.5), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --pattern-player:
-        linear-gradient(45deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%),
-        linear-gradient(45deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%);
-
-    --color-player: #F43F5E;
-    --color-block-a: #3B82F6;
-    --color-block-b: #10B981;
-    --color-block-c: #FBBF24;
-    --color-block-d: #8B5CF6;
-    --color-block-e: #0EA5E9;
-    --color-block-f: #22D3EE;
-    --color-block-g: #A855F7;
-    --color-block-h: #3B82F6;
-    --color-block-i: #10B981;
-    --color-block-j: #FBBF24;
-    --color-block-k: #8B5CF6;
-}
-
-/* --- Light Theme Overrides --- */
-body.light {
-    --bg-main: #FAFAFA;
-    --text-primary: #374151;
-    --text-secondary: #9CA3AF;
-
-    --bg-container: #FFFFFF;
-    --border-container: #EAEAEA;
-    --bg-board: #F3F4F6;
-    --bg-grid-lines: rgba(0, 0, 0, 0.07);
-    --shadow-board: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-
-    --bg-button: #FFFFFF;
-    --bg-button-hover: #F9FAFB;
-    --text-button: var(--text-primary);
-    --border-button: 1px solid #E5E7EB;
-    --shadow-button: 0 1px 0 #D8D8D8;
-    --shadow-button-hover-offset: -1px;
-    --shadow-button-active-offset: 1px;
-    --bg-button-disabled: #F3F4F6;
-    --text-button-disabled: #D1D5DB;
-
-    --bg-modal: #FFFFFF;
-    --border-modal: 1px solid #EAEAEA;
-    --text-win: #DC2626;
-    --text-best-score: #F97316;
-    --text-best-score-highlight: #F97316;
-    --bg-win-button: #EF4444;
-    --bg-win-button-hover: #F87171;
-    --text-win-button: white;
-
-    --bg-level-item: #F9FAFB;
-    --bg-level-item-hover: #F3F4F6;
-    --text-level-item: var(--text-primary);
-    --bg-level-locked: #E5E7EB;
-    --text-level-locked: #9CA3AF;
-    --text-best-score-badge: #F97316;
-    --stroke-best-score-badge: 0;
-
-    --shadow-vehicle: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-player: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-    --pattern-player:
-        linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
-        linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
-
-    --color-player: #EF4444;
-    --color-block-a: #FCA5A5;
-    --color-block-b: #FCD5CE;
-    --color-block-c: #FDE68A;
-    --color-block-d: #A7F3D0;
-    --color-block-e: #BFDBFE;
-    --color-block-f: #E9D5FF;
-    --color-block-g: #FED7AA;
-    --color-block-h: #FCA5A5;
-    --color-block-i: #FCD5CE;
-    --color-block-j: #FDE68A;
-    --color-block-k: #A7F3D0;
-}
+/* Theme variables are in themes.css */
 
 /* ================================
    3. Page Layout
@@ -461,7 +341,10 @@ body {
     box-shadow: var(--shadow-player);
 }
 
-.vehicle-0  { background-color: var(--color-player); }
+.vehicle-0  {
+    background-color: #F43F5E;
+    --shadow-player: 0 0 12px 2px rgba(244, 63, 94, 0.5), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
 .vehicle-1  { background-color: var(--color-block-a); }
 .vehicle-2  { background-color: var(--color-block-b); }
 .vehicle-3  { background-color: var(--color-block-c); }

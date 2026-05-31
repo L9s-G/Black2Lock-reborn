@@ -1,7 +1,8 @@
-const CACHE_NAME = 'Block2Lock-v2.5.4';
+const CACHE_NAME = 'Block2Lock-v2.5.5';
 const ASSETS = [
     './',
     './index.html',
+    './themes.css',
     './style.css',
     './main.js',
     './data.js',

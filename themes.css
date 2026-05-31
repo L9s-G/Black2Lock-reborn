@@ -1,0 +1,368 @@
+/* ================================================================
+   Block2Lock — Theme Variables
+   Add new themes by copying a block and changing the values.
+   ================================================================ */
+
+/* --- Dark Theme (Default) --- */
+body {
+    --bg-main: #1F1F1F;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+
+    --bg-container: #3D3D3D;
+    --border-container: #2C2C2C;
+    --bg-board: #2C2C2C;
+    --bg-grid-lines: rgba(255, 255, 255, 0.05);
+    --shadow-board: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    --bg-button: #3D3D3D;
+    --bg-button-hover: #4f4f4f;
+    --text-button: var(--text-primary);
+    --border-button: 1px solid rgba(255, 255, 255, 0.08);
+    --shadow-button: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-button-hover-offset: 0;
+    --shadow-button-active-offset: 0;
+    --bg-button-disabled: rgba(61, 61, 61, 0.5);
+    --text-button-disabled: #64748b;
+
+    --bg-modal: #3D3D3D;
+    --border-modal: 1px solid #2C2C2C;
+    --text-win: #10B981;
+    --text-best-score: #FBBF24;
+    --text-best-score-highlight: #FBBF24;
+    --bg-win-button: #F43F5E;
+    --bg-win-button-hover: #FB7185;
+    --text-win-button: #fff;
+
+    --bg-level-item: #454545;
+    --bg-level-item-hover: #4f4f4f;
+    --text-level-item: var(--text-primary);
+    --bg-level-locked: rgba(61, 61, 61, 0.5);
+    --text-level-locked: #64748b;
+    --text-best-score-badge: #FBBF24;
+    --stroke-best-score-badge: 1px rgba(0, 0, 0, 0.3);
+
+    --shadow-vehicle: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.2);
+    --shadow-player: 0 0 12px 2px rgba(244, 63, 94, 0.5), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --pattern-player:
+        linear-gradient(45deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%),
+        linear-gradient(45deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%);
+
+    --color-player: #F43F5E;
+    --color-block-a: #3B82F6;
+    --color-block-b: #10B981;
+    --color-block-c: #FBBF24;
+    --color-block-d: #8B5CF6;
+    --color-block-e: #0EA5E9;
+    --color-block-f: #22D3EE;
+    --color-block-g: #A855F7;
+    --color-block-h: #3B82F6;
+    --color-block-i: #10B981;
+    --color-block-j: #FBBF24;
+    --color-block-k: #8B5CF6;
+}
+
+/* --- Light Theme --- */
+body.light {
+    --bg-main: #FAFAFA;
+    --text-primary: #374151;
+    --text-secondary: #9CA3AF;
+
+    --bg-container: #FFFFFF;
+    --border-container: #EAEAEA;
+    --bg-board: #F3F4F6;
+    --bg-grid-lines: rgba(0, 0, 0, 0.07);
+    --shadow-board: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+
+    --bg-button: #FFFFFF;
+    --bg-button-hover: #F9FAFB;
+    --text-button: var(--text-primary);
+    --border-button: 1px solid #E5E7EB;
+    --shadow-button: 0 1px 0 #D8D8D8;
+    --shadow-button-hover-offset: -1px;
+    --shadow-button-active-offset: 1px;
+    --bg-button-disabled: #F3F4F6;
+    --text-button-disabled: #D1D5DB;
+
+    --bg-modal: #FFFFFF;
+    --border-modal: 1px solid #EAEAEA;
+    --text-win: #DC2626;
+    --text-best-score: #F97316;
+    --text-best-score-highlight: #F97316;
+    --bg-win-button: #EF4444;
+    --bg-win-button-hover: #F87171;
+    --text-win-button: white;
+
+    --bg-level-item: #F9FAFB;
+    --bg-level-item-hover: #F3F4F6;
+    --text-level-item: var(--text-primary);
+    --bg-level-locked: #E5E7EB;
+    --text-level-locked: #9CA3AF;
+    --text-best-score-badge: #F97316;
+    --stroke-best-score-badge: 0;
+
+    --shadow-vehicle: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-player: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --pattern-player:
+        linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+        linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+
+    --color-player: #EF4444;
+    --color-block-a: #FCA5A5;
+    --color-block-b: #FCD5CE;
+    --color-block-c: #FDE68A;
+    --color-block-d: #A7F3D0;
+    --color-block-e: #BFDBFE;
+    --color-block-f: #E9D5FF;
+    --color-block-g: #FED7AA;
+    --color-block-h: #FCA5A5;
+    --color-block-i: #FCD5CE;
+    --color-block-j: #FDE68A;
+    --color-block-k: #A7F3D0;
+}
+
+/* --- Forest Mist Theme --- */
+body.forest {
+    --bg-main: #0F1A14;
+    --text-primary: #E3F2ED;
+    --text-secondary: #9BB5A8;
+
+    --bg-container: #1A2A22;
+    --border-container: #0D1511;
+    --bg-board: #15241D;
+    --bg-grid-lines: rgba(200, 230, 220, 0.06);
+    --shadow-board: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+
+    --bg-button: #1F332A;
+    --bg-button-hover: #264037;
+    --text-button: var(--text-primary);
+    --border-button: 1px solid rgba(200, 230, 220, 0.12);
+    --shadow-button: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-button-hover-offset: 0;
+    --shadow-button-active-offset: 0;
+    --bg-button-disabled: rgba(31, 51, 42, 0.5);
+    --text-button-disabled: #6E857A;
+
+    --bg-modal: #1F332A;
+    --border-modal: 1px solid #0D1511;
+    --text-win: #7EE2A8;
+    --text-best-score: #A8E5C4;
+    --text-best-score-highlight: #A8E5C4;
+    --bg-win-button: #4CAF7A;
+    --bg-win-button-hover: #6BCF96;
+    --text-win-button: #ffffff;
+
+    --bg-level-item: #23382F;
+    --bg-level-item-hover: #2A4238;
+    --text-level-item: var(--text-primary);
+    --bg-level-locked: rgba(31, 51, 42, 0.5);
+    --text-level-locked: #6E857A;
+    --text-best-score-badge: #A8E5C4;
+    --stroke-best-score-badge: 1px rgba(0, 0, 0, 0.4);
+
+    --shadow-vehicle: inset 0 0 0 1px rgba(120, 200, 160, 0.15), 0 2px 6px rgba(0, 0, 0, 0.35);
+    --shadow-player: 0 0 14px 3px rgba(120, 200, 160, 0.35),
+                     0 10px 15px -3px rgb(0 0 0 / 0.2),
+                     0 4px 6px -4px rgb(0 0 0 / 0.2);
+    --pattern-player:
+        linear-gradient(45deg, rgba(120, 200, 160, 0.08) 25%, transparent 25%, transparent 75%, rgba(120, 200, 160, 0.08) 75%),
+        linear-gradient(-45deg, rgba(120, 200, 160, 0.08) 25%, transparent 25%, transparent 75%, rgba(120, 200, 160, 0.08) 75%);
+
+    --color-player: #7EE2A8;
+    --color-block-a: #6BAF92;
+    --color-block-b: #A3C9B5;
+    --color-block-c: #DDE8D2;
+    --color-block-d: #B7D8C8;
+    --color-block-e: #8FBFA8;
+    --color-block-f: #C7E3D6;
+    --color-block-g: #A7C7B8;
+    --color-block-h: #6BAF92;
+    --color-block-i: #A3C9B5;
+    --color-block-j: #DDE8D2;
+    --color-block-k: #B7D8C8;
+}
+
+/* --- Amber Arc Theme --- */
+body.amber {
+    --bg-main: #14120E;
+    --text-primary: #FFF4D6;
+    --text-secondary: #C9BFA8;
+
+    --bg-container: #1E1A14;
+    --border-container: #0F0D0A;
+    --bg-board: #191611;
+    --bg-grid-lines: rgba(255, 200, 120, 0.06);
+    --shadow-board: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+
+    --bg-button: #2A241B;
+    --bg-button-hover: #332C22;
+    --text-button: var(--text-primary);
+    --border-button: 1px solid rgba(255, 200, 120, 0.15);
+    --shadow-button: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-button-hover-offset: 0;
+    --shadow-button-active-offset: 0;
+    --bg-button-disabled: rgba(42, 36, 27, 0.5);
+    --text-button-disabled: #8C8372;
+
+    --bg-modal: #2A241B;
+    --border-modal: 1px solid #0F0D0A;
+    --text-win: #4FFFCB;
+    --text-best-score: #FFD27A;
+    --text-best-score-highlight: #FFD27A;
+    --bg-win-button: #FF8A3D;
+    --bg-win-button-hover: #FF9F5C;
+    --text-win-button: #ffffff;
+
+    --bg-level-item: #2F281F;
+    --bg-level-item-hover: #3A3227;
+    --text-level-item: var(--text-primary);
+    --bg-level-locked: rgba(42, 36, 27, 0.5);
+    --text-level-locked: #8C8372;
+    --text-best-score-badge: #FFD27A;
+    --stroke-best-score-badge: 1px rgba(0, 0, 0, 0.4);
+
+    --shadow-vehicle: inset 0 0 0 1px rgba(255, 180, 80, 0.2), 0 2px 6px rgba(0, 0, 0, 0.35);
+    --shadow-player: 0 0 14px 3px rgba(255, 150, 60, 0.45),
+                     0 10px 15px -3px rgb(0 0 0 / 0.2),
+                     0 4px 6px -4px rgb(0 0 0 / 0.2);
+    --pattern-player:
+        linear-gradient(45deg, rgba(255, 150, 60, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 150, 60, 0.1) 75%),
+        linear-gradient(-45deg, rgba(255, 150, 60, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 150, 60, 0.1) 75%);
+
+    --color-player: #FF8A3D;
+    --color-block-a: #FFB86C;
+    --color-block-b: #FFD27A;
+    --color-block-c: #FFE9B0;
+    --color-block-d: #4FFFCB;
+    --color-block-e: #7CFFD8;
+    --color-block-f: #A8FFE6;
+    --color-block-g: #FF9F5C;
+    --color-block-h: #FFB86C;
+    --color-block-i: #FFD27A;
+    --color-block-j: #FFE9B0;
+    --color-block-k: #4FFFCB;
+}
+
+/* --- Frost Steel Theme --- */
+body.frost {
+    --bg-main: #F5F7FA;
+    --text-primary: #2A2F33;
+    --text-secondary: #6B737A;
+
+    --bg-container: #FFFFFF;
+    --border-container: #DDE2E6;
+    --bg-board: #EEF1F4;
+    --bg-grid-lines: rgba(80, 120, 130, 0.08);
+    --shadow-board: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    --bg-button: #FFFFFF;
+    --bg-button-hover: #F0F3F6;
+    --text-button: var(--text-primary);
+    --border-button: 1px solid #D5DBDF;
+    --shadow-button: 0 1px 2px rgba(0, 0, 0, 0.08);
+    --shadow-button-hover-offset: -1px;
+    --shadow-button-active-offset: 1px;
+    --bg-button-disabled: #E8ECEF;
+    --text-button-disabled: #AEB5BA;
+
+    --bg-modal: #FFFFFF;
+    --border-modal: 1px solid #DDE2E6;
+    --text-win: #00C2A8;
+    --text-best-score: #009FB0;
+    --text-best-score-highlight: #009FB0;
+    --bg-win-button: #00C2A8;
+    --bg-win-button-hover: #00D8BE;
+    --text-win-button: #ffffff;
+
+    --bg-level-item: #F3F6F8;
+    --bg-level-item-hover: #E9EDF0;
+    --text-level-item: var(--text-primary);
+    --bg-level-locked: #E1E5E8;
+    --text-level-locked: #9AA2A8;
+    --text-best-score-badge: #009FB0;
+    --stroke-best-score-badge: 0;
+
+    --shadow-vehicle: inset 0 0 0 1px rgba(0, 180, 170, 0.15),
+                      0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-player: inset 0 0 0 1px rgba(0, 180, 170, 0.2),
+                     0 0 12px 3px rgba(0, 200, 180, 0.35),
+                     0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    --pattern-player:
+        linear-gradient(45deg, rgba(0, 200, 180, 0.08) 25%, transparent 25%, transparent 75%, rgba(0, 200, 180, 0.08) 75%),
+        linear-gradient(-45deg, rgba(0, 200, 180, 0.08) 25%, transparent 25%, transparent 75%, rgba(0, 200, 180, 0.08) 75%);
+
+    --color-player: #00C2A8;
+    --color-block-a: #C7D4DA;
+    --color-block-b: #DDE5E8;
+    --color-block-c: #B8C8CE;
+    --color-block-d: #A0D9D2;
+    --color-block-e: #C2F0E8;
+    --color-block-f: #D9FAF4;
+    --color-block-g: #8FBEC6;
+    --color-block-h: #C7D4DA;
+    --color-block-i: #DDE5E8;
+    --color-block-j: #B8C8CE;
+    --color-block-k: #A0D9D2;
+}
+
+/* --- Soft Cyber Pink Theme --- */
+body.softpink {
+    --bg-main: #F8F5F7;
+    --text-primary: #3A3336;
+    --text-secondary: #8C7F86;
+
+    --bg-container: #FFFFFF;
+    --border-container: #E7DDE2;
+    --bg-board: #F2EEF1;
+    --bg-grid-lines: rgba(255, 120, 180, 0.08);
+    --shadow-board: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+
+    --bg-button: #FFFFFF;
+    --bg-button-hover: #F4F0F3;
+    --text-button: var(--text-primary);
+    --border-button: 1px solid #E3D8DE;
+    --shadow-button: 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-button-hover-offset: -1px;
+    --shadow-button-active-offset: 1px;
+    --bg-button-disabled: #ECE6EA;
+    --text-button-disabled: #B8AEB4;
+
+    --bg-modal: #FFFFFF;
+    --border-modal: 1px solid #E7DDE2;
+    --text-win: #FF4FA3;
+    --text-best-score: #FF7FBF;
+    --text-best-score-highlight: #FF7FBF;
+    --bg-win-button: #FF4FA3;
+    --bg-win-button-hover: #FF6AB4;
+    --text-win-button: #ffffff;
+
+    --bg-level-item: #F6F1F4;
+    --bg-level-item-hover: #EDE6EA;
+    --text-level-item: var(--text-primary);
+    --bg-level-locked: #E4DCE0;
+    --text-level-locked: #A89CA2;
+    --text-best-score-badge: #FF7FBF;
+    --stroke-best-score-badge: 0;
+
+    --shadow-vehicle: inset 0 0 0 1px rgba(255, 120, 180, 0.18),
+                      0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-player: inset 0 0 0 1px rgba(255, 120, 180, 0.25),
+                     0 0 12px 3px rgba(255, 80, 160, 0.35),
+                     0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    --pattern-player:
+        linear-gradient(45deg, rgba(255, 120, 180, 0.08) 25%, transparent 25%, transparent 75%, rgba(255, 120, 180, 0.08) 75%),
+        linear-gradient(-45deg, rgba(255, 120, 180, 0.08) 25%, transparent 25%, transparent 75%, rgba(255, 120, 180, 0.08) 75%);
+
+    --color-player: #FF4FA3;
+    --color-block-a: #F7DDE8;
+    --color-block-b: #FBEAF1;
+    --color-block-c: #E8C7D6;
+    --color-block-d: #FF7FBF;
+    --color-block-e: #FFD1E6;
+    --color-block-f: #FFE6F1;
+    --color-block-g: #E3B8C9;
+    --color-block-h: #F7DDE8;
+    --color-block-i: #FBEAF1;
+    --color-block-j: #E8C7D6;
+    --color-block-k: #FF7FBF;
+}

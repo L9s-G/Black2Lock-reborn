@@ -94,7 +94,8 @@ export function initEvents(cbs) {
 // --- Theme ---
 
 export function applyTheme(theme) {
-  document.body.classList.toggle('light', theme === 'light');
+  document.body.classList.remove('light', 'forest', 'amber', 'frost', 'softpink');
+  if (theme !== 'dark') document.body.classList.add(theme);
 }
 
 // --- Board rendering ---

@@ -13,7 +13,7 @@ Slide blocks on a 6×6 grid to move the red player block to the exit. 352,273 le
 - **Favorites** — mark levels with ♥, favorites always sort first
 - **Offline play** — Service Worker caches game assets, DLC stored in IndexedDB
 - **PWA** — installable on mobile and desktop
-- **Dark/Light theme** — toggle via title "2" button
+- **4 themes** — Dark, Light, Forest Mist, Amber Arc — toggle via title "2" button
 - **Undo & Replay** — full move history with replay animation
 - **Random level** — pick from unplayed or all levels
 - **Sort modes** — ascending/descending by completion moves
@@ -24,7 +24,8 @@ Slide blocks on a 6×6 grid to move the red player block to the exit. 352,273 le
 
 ```
 index.html       UI markup
-style.css        All styles (theme variables, responsive, animations)
+themes.css       Theme color variables (dark, light, forest, amber)
+style.css        Layout, components, animations (references theme variables)
 main.js          Entry point, orchestration (~300 lines)
 game.js          Pure game state and logic (no DOM, no storage)
 render.js        All DOM manipulation, UI components (~400 lines)
@@ -41,10 +42,14 @@ manifest.json    PWA manifest
 
 ### Styling Architecture
 
-All styles in `style.css` (~900 lines), organized into 15 sections:
+Styles split across two files:
+
+- **`themes.css`** — theme color variables only (one block per theme, easy to extend)
+- **`style.css`** — layout, components, animations (references theme variables)
+
+`style.css` organized into 14 sections:
 
 1. **Base Reset & Typography** — CSS reset, system font stack
-2. **Theme Variables** — 50+ CSS custom properties for dark/light themes
 3. **Page Layout** — `.page` (flex centering), `.page-width` (responsive max-width)
 4. **Header & Game Info** — title, ghost buttons, action buttons
 5. **Buttons & Controls** — `.btn`, `.action-btn`, `.btn-ghost`
@@ -194,7 +199,7 @@ Level display uses base-62 encoding (0-9, a-z, A-Z), 3 digits for up to 238,327 
 - No build tools — native ES modules, zero configuration
 - No framework — vanilla JS, ~60 KB total (excluding DLC)
 - Semantic CSS — no utility framework, component-based class names
-- CSS custom properties — 50+ variables for dark/light theming
+- Split CSS — themes.css (colors) + style.css (layout), easy to extend
 - Binary level format — 36 bytes/level, instant random access
 - On-demand slicing — Uint8Array in memory, convert on access
 - IndexedDB — supports large datasets (hundreds of MB)

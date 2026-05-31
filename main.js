@@ -20,8 +20,11 @@ function setTheme(theme) {
   try { localStorage.setItem('block2lock_theme', theme); } catch (e) { }
 }
 
+const THEMES = ['dark', 'light', 'forest', 'amber', 'frost', 'softpink'];
+
 function toggleTheme() {
-  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  const idx = THEMES.indexOf(currentTheme);
+  setTheme(THEMES[(idx + 1) % THEMES.length]);
 }
 
 // --- Current UI state ---
@@ -306,7 +309,7 @@ async function init() {
   // Theme
   try {
     const saved = localStorage.getItem('block2lock_theme');
-    if (saved === 'light' || saved === 'dark') setTheme(saved); else setTheme('dark');
+    if (THEMES.includes(saved)) setTheme(saved); else setTheme('dark');
   } catch (e) { setTheme('dark'); }
 
   // Init drag module
